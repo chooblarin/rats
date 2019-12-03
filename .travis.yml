@@ -1,4 +1,10 @@
 language: node_js
 node_js:
   - 10
-  
+addons:
+  chrome: stable
+before_install:
+  - npm install -g @lhci/cli@0.3.5
+script:
+  - yarn build
+  - lhci autorun
